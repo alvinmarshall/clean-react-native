@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import 'reflect-metadata';
 import React from 'react';
 import {
   SafeAreaView,
@@ -26,32 +26,48 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {
+  container,
+  registerDependencies,
+  registerFlyValue,
+} from '~di/module/app.module';
+import {Provider} from 'react-redux';
+import {AppDependencies} from '~di/types';
+import {StoreContainer} from '~presentation/share-state/redux/reducers';
 
+registerDependencies();
+registerFlyValue();
 const Section: React.FC<{
   title: string;
 }> = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
+  // @ts-ignore
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <Provider
+      store={
+        container.resolve<StoreContainer>(AppDependencies.StoreContainer).store
+      }>
+      <View style={styles.sectionContainer}>
+        <Text
+          style={[
+            styles.sectionTitle,
+            {
+              color: isDarkMode ? Colors.white : Colors.black,
+            },
+          ]}>
+          {title}
+        </Text>
+        <Text
+          style={[
+            styles.sectionDescription,
+            {
+              color: isDarkMode ? Colors.light : Colors.dark,
+            },
+          ]}>
+          {children}
+        </Text>
+      </View>
+    </Provider>
   );
 };
 
