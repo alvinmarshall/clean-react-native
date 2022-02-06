@@ -3,4 +3,5 @@ export enum AppDependencies {
   RegistrationRepository = 'RegistrationRepository',
   RegistrationUseCase = 'RegistrationUseCase',
   AxiosProvider = 'AxiosProvider',
+  RegistrationRemoteSource = 'RegistrationRemoteSource',
 }
