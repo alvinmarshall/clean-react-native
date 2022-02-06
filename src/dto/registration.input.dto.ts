@@ -3,5 +3,6 @@ export class RegistrationInputDto {
   lastName?: string;
   email?: string;
   password?: string;
+  countryCode?: string;
   confirmPassword?: string;
 }

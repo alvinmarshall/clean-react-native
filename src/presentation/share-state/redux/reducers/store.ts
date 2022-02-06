@@ -7,13 +7,19 @@ import {registrationReducer} from '~presentation/share-state/redux/reducers/regi
 import {BehaviorSubject} from 'rxjs';
 import {Action, applyMiddleware, createStore} from 'redux';
 import {createEpicManager} from '~presentation/share-state/redux/reducers/epic';
-
-const {rootEpic, epicMiddleware, epic$, addEpic} = createEpicManager({});
+import {registrationEpic} from '~presentation/share-state/redux/epics/register';
 
 export const configureStore = (): StoreContainer => {
+  // Reducers
   const reducerManager = createReducerManager({
     registration: registrationReducer,
   });
+
+  // Epics
+  const {rootEpic, epicMiddleware, epic$, addEpic} = createEpicManager(
+    {},
+    registrationEpic,
+  );
 
   const action$ = new BehaviorSubject<Action>({type: 'init'});
   const reducer = (

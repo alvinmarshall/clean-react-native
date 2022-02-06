@@ -5,9 +5,13 @@ import {
   StoreContainer,
 } from '~presentation/share-state/redux/reducers';
 import {registerDataModule} from '~di/module/data.module';
+import {registerRepositoryModule} from '~di/module/repository.module';
+import {registerUseCaseModule} from '~di/module/usecase.module';
 
 const registerDependencies = () => {
   registerDataModule();
+  registerUseCaseModule();
+  registerRepositoryModule();
 };
 
 const registerFlyValue = () => {
