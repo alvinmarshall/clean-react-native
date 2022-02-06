@@ -4,8 +4,11 @@ import {
   configureStore,
   StoreContainer,
 } from '~presentation/share-state/redux/reducers';
+import {registerDataModule} from '~di/module/data.module';
 
-const registerDependencies = () => {};
+const registerDependencies = () => {
+  registerDataModule();
+};
 
 const registerFlyValue = () => {
   container.register<StoreContainer>(AppDependencies.StoreContainer, {
