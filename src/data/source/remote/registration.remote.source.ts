@@ -17,7 +17,7 @@ export class RegistrationRemoteSourceImpl implements RegistrationRemoteSource {
   ) {}
   signUp(data: RegistrationInputDto): Observable<any> {
     return this.remoteProvider
-      .post<ApiResult>('/register', data)
+      .get<ApiResult>('/todos/1', data)
       .pipe(map(response => response.data));
   }
 }

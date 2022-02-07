@@ -14,7 +14,7 @@ import {filter} from 'rxjs';
 
 export const useSignUp = (handle: RegistrationHandle) => {
   const {onSignUpFailed} = handle;
-  const {isRegistering} = useSelector(registrationReduxSelector);
+  const {isRegistering, isRegistered} = useSelector(registrationReduxSelector);
   const dispatch = useDispatch();
   const submit = (props: Registration) => {
     dispatch(signUp({...props}));
@@ -34,5 +34,5 @@ export const useSignUp = (handle: RegistrationHandle) => {
       subscribe.unsubscribe();
     };
   }, [action$, onSignUpFailed]);
-  return {isRegistering, submit};
+  return {isRegistering, isRegistered, submit};
 };
