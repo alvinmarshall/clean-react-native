@@ -41,13 +41,13 @@ const _SignUp: React.FC<RegistrationProps> = props => {
       <SafeAreaView style={{paddingHorizontal: 40, flex: 1}}>
         <Formik
           initialValues={{
-            firstName: 'kelvin',
-            lastName: 'kelvin',
-            email: 'ke@me.com',
-            phoneNumber: '32',
-            countryCode: 'ds',
-            password: 'qq',
-            confirmPassword: 'qq',
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            countryCode: '',
+            password: '',
+            confirmPassword: '',
           }}
           validationSchema={signUpSchema}
           onSubmit={values => {
