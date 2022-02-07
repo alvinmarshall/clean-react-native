@@ -8,5 +8,6 @@ export const registrationReduxSelector: Selector<
 > = state => {
   return {
     isRegistering: state.registration.isRegistering,
+    isRegistered: state.registration.isRegistered,
   };
 };

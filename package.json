@@ -13,15 +13,22 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
     "axios": "^0.25.0",
+    "formik": "^2.2.9",
     "react": "17.0.2",
     "react-native": "0.67.2",
     "react-native-config": "^1.4.5",
+    "react-native-elements": "^3.4.2",
+    "react-native-gesture-handler": "^2.2.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-linear-gradient": "^2.5.6",
+    "react-native-material-ripple": "^0.9.1",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-observable": "^2.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.2",
-    "tsyringe": "^4.6.0"
+    "tsyringe": "^4.6.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -30,6 +37,7 @@
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
     "@types/react-native": "^0.66.15",
+    "@types/react-native-material-ripple": "^0.9.2",
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
